@@ -1,15 +1,26 @@
 <div class="home-container">
-    <header>SuperPets</header>
+    <header class="header">
+        <p>SuperPets</p>
+    </header>
         <section class="banner-container">
-            <p>Adoção é um ato de  amor e responsabilidade</p>
-            <img src="../../assets/home-banner.svg" alt="">
+            <img
+                class="img-container"
+                sizes="(max-width: 512px) 100vw, 512px" 
+                src="../../assets/home-banner.svg"
+                srcset="
+                    ../../assets/home-banner.svg 200w,
+                    ../../assets/home-banner.svg 475w,
+                    ../../assets/home-banner.svg 512w"
+                alt="">
         </section>
-        <app-button
-            label="Quero adotar"
-            bgColor="orange"
-        ></app-button>
-        <app-button
-            label="Quero divulgar um animal"
-            bgColor="purple"
-        ></app-button>
+        <div class="btn-container">
+            <app-button
+                label="Quero adotar"
+                bgColor="orange"
+            ></app-button>
+            <app-button
+                label="Quero divulgar um animal"
+                bgColor="purple"
+            ></app-button>
+        </div>
 </div>

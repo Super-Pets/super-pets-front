@@ -1,14 +1,62 @@
 @import '../../../styles.scss';
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .btn-container {
+        font-size: 12px;
+        width: 110px;
+        height: 60px;
+        border-radius: 25px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .btn-container {
+        font-size: 16px;
+        width: 180px;
+        height: 70px;
+        border-radius: 25px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .btn-container {
+        font-size: 20px;
+        width: 200px;
+        height: 80px;
+        border-radius: 20px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .btn-container {
+        font-size: 24px;
+        width: 250px;
+        height: 85px;
+        border-radius: 30px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .btn-container {
+        font-size: 26px;
+        width: 300px;
+        height: 95px;
+        border-radius: 30px;
+    }
+}
+
 .btn-container {
-    border-radius: 30px;
+
     color: #878282;
     border: none;
     font-family: Roboto;
-    font-size: 24px;
     font-weight: 500;
-    width: 200px;
-    height: 95px;
+    cursor: pointer;
 }
 
 .color-orange {
