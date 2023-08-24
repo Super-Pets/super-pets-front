@@ -1,7 +1,5 @@
 <div class="home-container">
-    <header class="header">
-        <p>SuperPets</p>
-    </header>
+    <app-header></app-header>
         <section class="banner-container">
             <img
                 class="img-container"
@@ -20,6 +18,7 @@
             ></app-button>
             <app-button
                 label="Quero divulgar um animal"
+                (navigation)="registratePet()"
                 bgColor="purple"
             ></app-button>
         </div>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     CommonModule,
     SharedModule,
-    BrowserModule
+    BrowserModule,
+    RouterModule
   ],
   bootstrap: [HomeComponent]
 })
