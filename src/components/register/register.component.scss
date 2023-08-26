@@ -2,4 +2,76 @@
 
 .register-container {
     background-color: $white;
+    height: 80vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .subtitle {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    .register-container {
+        width: 90%;
+        margin: 30px auto;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .register-container {
+        width: 90%;
+        margin: 50px auto;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .subtitle {
+        font-size: 24px;
+    }
+    .register-container {
+        width: 70%;
+        margin: 50px auto;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .subtitle {
+        font-size: 24px;
+    }
+    .register-container {
+        width: 70%;
+        margin: 50px auto;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .subtitle {
+        font-size: 28px;
+    }
+    .register-container {
+        width: 50%;
+        margin: 30px auto;
+    }
+}
+
+
+.subtitle {
+    text-align: center;
+    color: $dark-pink;
+    font-family: Roboto;
+    font-weight: 500;
 }
