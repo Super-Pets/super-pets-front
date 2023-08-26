@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { inputs } from 'src/models/inputs';
 
 @Component({
   selector: 'app-register',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  inputs = inputs;
 
 }
