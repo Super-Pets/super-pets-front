@@ -20,6 +20,29 @@
     .register-container {
         width: 90%;
         margin: 30px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        select {
+            padding: 8px 3px;
+            width: 80vw;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: grey;
+        }
+    }
+    .input-container {
+        width: 90%;
+        input {
+            width: 80vw;
+            padding: 8px;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -32,6 +55,31 @@
     .register-container {
         width: 90%;
         margin: 50px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        select {
+            padding: 8px 3px;
+            width: 70vw;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: grey;
+        }
+    }
+    .input-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        input {
+            width: 70vw;
+            padding: 8px;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -43,6 +91,25 @@
     .register-container {
         width: 70%;
         margin: 50px auto;
+
+        select {
+            padding: 8px 3px;
+            width: 50vw;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: grey;
+        }
+    }
+    .input-container {
+        width: 100%;
+        input {
+            width: 50vw;
+            padding: 8px;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -54,6 +121,25 @@
     .register-container {
         width: 70%;
         margin: 50px auto;
+
+        select {
+            padding: 8px 3px;
+            width: 45vw;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: grey;
+        }
+    }
+    .input-container {
+        width: 100%;
+        input {
+            width: 45vw;
+            padding: 8px;
+            border: 1px solid $dark-pink;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -65,9 +151,27 @@
     .register-container {
         width: 50%;
         margin: 30px auto;
+
+        select {
+            padding: 8px 3px;
+            width: 35vw;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: grey;
+        }
+    }
+    .input-container {
+        width: 100%;
+        input {
+            width: 35vw;
+            padding: 8px;
+            border: 1px solid $dark-pink;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
     }
 }
-
 
 .subtitle {
     text-align: center;

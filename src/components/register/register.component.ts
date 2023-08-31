@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { inputs } from 'src/models/inputs';
+import { AnimalsService } from 'src/services/animals.service';
+import { NgForm } from '@angular/forms';
+import { species, gender, sizes, castration, IAnimals } from 'src/models/animals';
 
 @Component({
   selector: 'app-register',
@@ -7,6 +9,24 @@ import { inputs } from 'src/models/inputs';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  inputs = inputs;
+  species = species;
+  gender = gender;
+  sizes = sizes;
+  castration = castration;
+
+  constructor(
+    private animalsService: AnimalsService
+  ) { }
+
+  onSubmitForm(form: IAnimals) {
+    this.animalsService.createAnimal(form).subscribe({
+      next: response => {
+        console.log(response);
+      },
+      error: error => {
+        console.log(error);
+      }
+    })
+  }
 
 }

@@ -7,7 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() label: string = '';
+  @Input() disabled: boolean | null = false;
   @Input() bgColor: 'orange' | 'purple' | 'light-pink' | 'dark-pink' | 'white' = 'orange';
-  @Output() navigation = new EventEmitter<MouseEvent>();
+  @Output() onClick: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
 
 }
