@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AnimalsService } from 'src/services/animals.service';
-import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { species, gender, sizes, castration, IAnimals } from 'src/models/animals';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -15,16 +16,18 @@ export class RegisterComponent {
   castration = castration;
 
   constructor(
-    private animalsService: AnimalsService
+    private animalsService: AnimalsService,
+    private toastr: ToastrService
   ) { }
 
-  onSubmitForm(form: IAnimals) {
-    this.animalsService.createAnimal(form).subscribe({
+  onSubmitForm(data: IAnimals, form: NgForm) {
+    this.animalsService.createAnimal(data).subscribe({
       next: response => {
-        console.log(response);
+        form.reset();
+        this.toastr.success('Pet cadastrado com sucesso.', 'Sucesso!');
       },
       error: error => {
-        console.log(error);
+        this.toastr.error('Erro na requisição. Por favor, tente novamente mais tarde.', 'Erro');
       }
     })
   }

@@ -1,7 +1,7 @@
 <div>
     <app-header></app-header>
     <form class="register-container" #form="ngForm">
-        <p class="subtitle">Cadastre um animal</p>
+        <p class="subtitle">Cadastre um pet ❤</p>
         <div class="input-container">
             <input placeholder="Nome do animal" type="text" name="name" ngModel required>
         </div>
@@ -50,10 +50,10 @@
         </div>
 
         <app-button
-            label="Cadastrar animal"
+            label="Enviar cadastro"
             bgColor="dark-pink"
             [disabled]="form.invalid"
-            (onClick)="onSubmitForm(form.value)"
+            (onClick)="onSubmitForm(form.value, form)"
         ></app-button>
     </form>
 </div>
