@@ -8,7 +8,7 @@
         <div class="input-container">
             <select name="species">
                 <option value="" selected disabled>Selecione a espécie</option>
-                <option *ngFor="let item of species" [ngValue]="item">{{item}}</option>
+                <option *ngFor="let item of animalsType.species" [ngValue]="item">{{item}}</option>
             </select>
         </div>
 
@@ -19,7 +19,7 @@
         <div class="input-container">
             <select name="gender" ngModel required>
                 <option value="" selected disabled>Selecione o gênero</option>
-                <option *ngFor="let item of gender" [ngValue]="item">{{item}}</option>
+                <option *ngFor="let item of animalsType.gender" [ngValue]="item">{{item}}</option>
             </select>
         </div>
 
@@ -30,7 +30,7 @@
         <div class="input-container">
             <select name="size" ngModel required>
                 <option value="" selected disabled>Selecione o porte</option>
-                <option *ngFor="let size of sizes" [ngValue]="size">{{size}}</option>
+                <option *ngFor="let size of animalsType.sizes" [ngValue]="size">{{size}}</option>
             </select>
         </div>
 
@@ -45,7 +45,7 @@
         <div class="input-container">
             <select name="castration" ngModel required>
                 <option value="" disabled>Castrado(a)?</option>
-                <option *ngFor="let item of castration" [ngValue]="item === 'Sim' ? true : false">{{item}}</option>
+                <option *ngFor="let item of animalsType.castration" [ngValue]="item === 'Sim' ? true : false">{{item}}</option>
             </select>
         </div>
 

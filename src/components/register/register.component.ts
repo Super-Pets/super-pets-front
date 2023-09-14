@@ -10,10 +10,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  species = species;
-  gender = gender;
-  sizes = sizes;
-  castration = castration;
+  animalsType = {
+    species: species,
+    gender: gender,
+    sizes: sizes,
+    castration: castration
+  }
 
   constructor(
     private animalsService: AnimalsService,
@@ -22,14 +24,13 @@ export class RegisterComponent {
 
   onSubmitForm(data: IAnimals, form: NgForm) {
     this.animalsService.createAnimal(data).subscribe({
-      next: response => {
+      next: () => {
         form.reset();
         this.toastr.success('Pet cadastrado com sucesso.', 'Sucesso!');
       },
-      error: error => {
+      error: () => {
         this.toastr.error('Erro na requisição. Por favor, tente novamente mais tarde.', 'Erro');
       }
-    })
-  }
-
+    });
+  };
 }
