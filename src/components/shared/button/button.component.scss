@@ -1,11 +1,5 @@
 @import '../../../global.scss';
 
-$extra-small: 0;
-$small: 600px;
-$medium: 768px;
-$large: 992px;
-$extra-large: 1200px;
-
 @mixin btnBgColor($color) {
     background-color: $color;
 }

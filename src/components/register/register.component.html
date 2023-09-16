@@ -3,7 +3,7 @@
     <form class="register-container" #form="ngForm">
         <p class="subtitle">Cadastre um pet ❤</p>
         <div class="input-container">
-            <input placeholder="Nome do animal" type="text" name="name" ngModel required>
+            <input placeholder="Nome do animal" type="text" name="name" ngModel required autocomplete="off">
         </div>
         <div class="input-container">
             <select name="species">
@@ -13,7 +13,7 @@
         </div>
 
         <div class="input-container">
-            <input placeholder="Caracteristicas" type="text" name="description" ngModel required>
+            <input placeholder="Características" type="text" name="description" ngModel required autocomplete="off">
         </div>
 
         <div class="input-container">
@@ -24,7 +24,7 @@
         </div>
 
         <div class="input-container">
-            <input placeholder="Idade" type="number" min="0" max="100" name="age" ngModel required>
+            <input placeholder="Idade" type="number" min="0" max="100" name="age" ngModel required autocomplete="off">
         </div>
 
         <div class="input-container">
@@ -35,11 +35,11 @@
         </div>
 
         <div class="input-container">
-            <input placeholder="Estado" type="text" name="local" ngModel required>
+            <input placeholder="Estado" type="text" name="local" ngModel required autocomplete="off">
         </div>
 
         <div class="input-container">
-            <input placeholder="Vacinas" type="text" name="vaccines" ngModel required>
+            <input placeholder="Vacinas" type="text" name="vaccines" ngModel required autocomplete="off">
         </div>
 
         <div class="input-container">
