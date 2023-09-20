@@ -16,4 +16,12 @@ export class AnimalsService {
   createAnimal(body: IAnimals): Observable<any> {
     return this.http.post(this.url, body);
   }
+
+  getAnimals(): Observable<any> {
+    return this.http.get(this.url);
+  }
+
+  getAnimalById(id: string): Observable<any> {
+    return this.http.get(`${this.url}/${id}`);
+  }
 }
