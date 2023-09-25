@@ -24,15 +24,13 @@ export class RegisterComponent implements OnDestroy {
     private toastr: ToastrService
   ) { }
 
-  onSubmitForm(data: IAnimals, form: NgForm) {
+  onSubmitForm(data: IAnimals, form: NgForm): void {
     this.subscription = this.animalsService.createAnimal(data).subscribe({
       next: () => {
         form.reset();
         this.toastr.success('Pet cadastrado com sucesso.', 'Sucesso!');
       },
-      error: () => {
-        this.toastr.error('Erro ao criar pet. Por favor, tente novamente mais tarde.', 'Erro');
-      }
+      error: () => this.toastr.error('Erro ao criar pet. Por favor, tente novamente mais tarde.', 'Erro')
     });
   };
 

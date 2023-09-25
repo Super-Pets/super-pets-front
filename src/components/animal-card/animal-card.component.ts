@@ -8,6 +8,6 @@ import { IAnimals } from 'src/models/animals';
 })
 export class AnimalCardComponent {
   @Input() animals: IAnimals[] = [];
-  @Output() clickButton = new EventEmitter();
+  @Output() clickButton: EventEmitter<MouseEvent> = new EventEmitter();
 
 }

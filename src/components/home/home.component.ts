@@ -22,22 +22,21 @@ export class HomeComponent implements OnInit {
     this.getAnimals();
   }
 
-  registratePet() {
+  registratePet(): void {
     this.router.navigateByUrl('/registrar');
   }
 
-  getAnimals() {
+  getAnimals(): void {
     this.animalsService.getAnimals().subscribe({
       next: result => this.animals = result,
-      error: () => {
-        this.toastr.error('Erro ao carregar informações dos pets. Por favor, tente novamente.', 'Erro');
-      }
+      error: () => this.toastr.error('Erro ao carregar informações dos pets. Por favor, tente novamente.', 'Erro')
     })
   }
 
-  getAnimalById() {
+  getAnimalById(): void {
     this.animalsService.getAnimalById('1').subscribe({
-      next: result => console.log(result)
+      next: result => console.log(result),
+      error: () => this.toastr.error('Erro ao carregar informações do pet. Por favor, tente novamente.', 'Erro')
     })
   }
 
