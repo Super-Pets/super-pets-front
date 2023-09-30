@@ -1,13 +1,13 @@
-@import '../../../global.scss';
+@import "../../../global.scss";
 
 @mixin media-query($breakpoint, $font-size, $font-weight, $padding) {
-    @media only screen and (min-width: $breakpoint) {
-        p {
-            font-size: $font-size;
-            font-weight: $font-weight;
-            padding: $padding;
-        }
+  @media only screen and (min-width: $breakpoint) {
+    p {
+      font-size: $font-size;
+      font-weight: $font-weight;
+      padding: $padding;
     }
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -19,20 +19,17 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @include media-query($medium, 24px, 500, 5px 0 0 30px);
 
-/* Large devices (laptops/desktops, 992px and up) */
-@include media-query($large, 24px, 500, 5px 0 0 30px);
-
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @include media-query($extra-large, 24px, 0, 10px 0 0 64px);
 
 .header {
-    background-color: $white;
+  background-color: $white;
 
-    p {
-        color: #FFA7A7;
-        font-weight: 500;
-        font-family: Roboto;
-        padding: 10px;
-        cursor: pointer;
-    }
+  p {
+    color: #ffa7a7;
+    font-weight: 500;
+    font-family: Roboto;
+    padding: 10px;
+    cursor: pointer;
+  }
 }

@@ -1,1 +1,6 @@
-<p>animal-card works!</p>
+<div class="container-cards">
+  <p class="container-title">Pets disponíveis para adoção</p>
+  <div class="animal-info" *ngFor="let animal of animals">
+    <span class="animal-name">{{ animal.name }}</span>
+  </div>
+</div>

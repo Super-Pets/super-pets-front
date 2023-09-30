@@ -4,12 +4,12 @@ import { HomeComponent } from 'src/components/home/home.component';
 import { RegisterComponent } from 'src/components/register/register.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'registrar', component: RegisterComponent}
+  { path: '', component: HomeComponent },
+  { path: 'registrar', component: RegisterComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,50 +1,50 @@
-@import '../../../global.scss';
+@import "../../../global.scss";
 
 @mixin btnBgColor($color) {
-    background-color: $color;
+  background-color: $color;
 }
 
 @mixin media-query($breakpoint, $font-size, $width, $height, $border-radius) {
-    @media only screen and (min-width: $breakpoint) {
-        .btn-container {
-            font-size: $font-size;
-            width: $width;
-            height: $height;
-            border-radius: $border-radius;
-        }
+  @media only screen and (min-width: $breakpoint) {
+    .btn-container {
+      font-size: $font-size;
+      width: $width;
+      height: $height;
+      border-radius: $border-radius;
     }
+  }
 }
 
 .btn-container {
-    color: #878282;
-    border: none;
-    font-family: Roboto;
-    font-weight: 500;
-    cursor: pointer;
+  color: #878282;
+  border: none;
+  font-family: Roboto;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 button:disabled {
-    background-color: #aca9a9;
-    color: $light-pink;
-    cursor: default;
+  background-color: #aca9a9;
+  color: $light-pink;
+  cursor: default;
 }
 
 .color {
-    &-orange {
-        @include btnBgColor($orange);
-    }
-    &-purple {
-        @include btnBgColor($purple);
-    }
-    &-light-pink {
-        @include btnBgColor($light-pink);
-    }
-    &-dark-pink {
-        @include btnBgColor($dark-pink);
-    }
-    &-white {
-        @include btnBgColor($white);
-    }
+  &-orange {
+    @include btnBgColor($orange);
+  }
+  &-purple {
+    @include btnBgColor($purple);
+  }
+  &-light-pink {
+    @include btnBgColor($light-pink);
+  }
+  &-dark-pink {
+    @include btnBgColor($dark-pink);
+  }
+  &-white {
+    @include btnBgColor($white);
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */

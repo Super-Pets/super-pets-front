@@ -1,3 +1,7 @@
-<button class="btn-container color-{{bgColor}}" [disabled]="disabled" (click)="onClick.emit()">
-    {{ label }}
+<button
+  class="btn-container color-{{ bgColor }}"
+  [disabled]="disabled"
+  (click)="onClick.emit()"
+>
+  {{ label }}
 </button>

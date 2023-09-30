@@ -1,0 +1,18 @@
+@import "../../global.scss";
+
+.container-cards {
+  padding: 0 20px;
+
+  &-title {
+    font-family: Roboto;
+    font-weight: 500;
+  }
+
+  @media only screen and (min-width: $large) {
+    padding: 0 200px;
+  }
+}
+
+.animal-info {
+  background-color: $dark-pink;
+}

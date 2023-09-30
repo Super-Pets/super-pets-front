@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IAnimals } from 'src/models/animals';
 import { AnimalsService } from 'src/services/animals.service';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+  subscriptions: Subscription[] = [];
   animals: IAnimals[] = [];
 
   constructor(
@@ -27,17 +29,25 @@ export class HomeComponent implements OnInit {
   }
 
   getAnimals(): void {
-    this.animalsService.getAnimals().subscribe({
-      next: result => this.animals = result,
-      error: () => this.toastr.error('Erro ao carregar informações dos pets. Por favor, tente novamente.', 'Erro')
-    })
+    this.subscriptions.push(
+      this.animalsService.getAnimals().subscribe({
+        next: result => this.animals = result,
+        error: () => this.toastr.error('Erro ao carregar informações dos pets. Por favor, tente novamente.', 'Erro')
+      })
+    )
   }
 
   getAnimalById(): void {
-    this.animalsService.getAnimalById('1').subscribe({
-      next: result => console.log(result),
-      error: () => this.toastr.error('Erro ao carregar informações do pet. Por favor, tente novamente.', 'Erro')
-    })
+    this.subscriptions.push(
+      this.animalsService.getAnimalById('1').subscribe({
+        next: result => console.log(result),
+        error: () => this.toastr.error('Erro ao carregar informações do pet. Por favor, tente novamente.', 'Erro')
+      })
+    )
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
 }

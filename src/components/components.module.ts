@@ -18,7 +18,7 @@ import { AnimalCardComponent } from 'src/components/animal-card/animal-card.comp
     AppComponent,
     RegisterComponent,
     HomeComponent,
-    AnimalCardComponent
+    AnimalCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +28,9 @@ import { AnimalCardComponent } from 'src/components/animal-card/animal-card.comp
     HttpClientModule,
     BrowserAnimationsModule,
     CommonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

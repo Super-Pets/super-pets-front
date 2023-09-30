@@ -37,36 +37,6 @@
     .container {
         &-btn {
             width: 60%;
-            margin: 25px auto;
-        }
-        &-img {
-            width: 100%;
-        }
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@include media-query($medium) {
-    .container {
-        &-btn {
-            width: 60%;
-            margin: 25px auto;
-        }
-        &-img {
-            width: 100%;
-        }
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@include media-query($large) {
-    .container {
-        &-btn {
-            width: 60%;
-            margin: 25px auto;
-        }
-        &-img {
-            width: 100%;
         }
     }
 }
