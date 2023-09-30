@@ -5,6 +5,7 @@ $purple: #a9aeff;
 $light-pink: #f7e7ee;
 $dark-pink: #ffa7a7;
 $white: #ffffff;
+$grey: #878282;
 
 $extra-small: 0;
 $small: 600px;
@@ -14,11 +15,11 @@ $extra-large: 1200px;
 
 * {
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 html {
-  width: 100vw;
+  width: 100%;
+  scroll-behavior: smooth;
 }
 
 html,

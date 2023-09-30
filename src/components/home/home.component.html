@@ -15,6 +15,7 @@
             <app-button
                 label="Quero adotar"
                 bgColor="orange"
+                hash="#adotar"
             ></app-button>
             <app-button
                 label="Quero divulgar um animal"
@@ -22,7 +23,7 @@
                 (onClick)="registratePet()"
             ></app-button>
         </div>
-        <section>
+        <section id="adotar">
             <app-animal-card
                 [animals]="animals"
             ></app-animal-card>

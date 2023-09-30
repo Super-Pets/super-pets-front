@@ -6,7 +6,7 @@
 
 @mixin media-query($breakpoint, $font-size, $width, $height, $border-radius) {
   @media only screen and (min-width: $breakpoint) {
-    .btn-container {
+    .container-btn {
       font-size: $font-size;
       width: $width;
       height: $height;
@@ -15,12 +15,19 @@
   }
 }
 
-.btn-container {
-  color: #878282;
-  border: none;
-  font-family: Roboto;
-  font-weight: 500;
+.container {
   cursor: pointer;
+  &-btn {
+    color: $grey;
+    border: none;
+    font-family: Roboto;
+    font-weight: 500;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $grey;
 }
 
 button:disabled {

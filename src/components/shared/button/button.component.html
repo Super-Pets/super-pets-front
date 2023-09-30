@@ -1,7 +1,12 @@
 <button
-  class="btn-container color-{{ bgColor }}"
+  class="container-btn color-{{ bgColor }}"
   [disabled]="disabled"
   (click)="onClick.emit()"
 >
-  {{ label }}
+  <div *ngIf="hash; else elseButton">
+    <a [href]="hash">{{ label }}</a>
+  </div>
+  <ng-template #elseButton>
+    {{ label }}
+  </ng-template>
 </button>

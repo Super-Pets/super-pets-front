@@ -5,9 +5,9 @@ import {
   species,
   gender,
   sizes,
-  castration,
-  IAnimals,
-} from 'src/models/animals';
+  castration
+} from 'src/utils/constants';
+import { IAnimals } from 'src/models/animals';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 

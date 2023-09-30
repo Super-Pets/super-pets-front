@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IAnimals } from 'src/models/animals';
+import { IAnimals, IImages } from 'src/models/animals';
+import { animalImages } from 'src/utils/constants';
 
 @Component({
   selector: 'app-animal-card',
@@ -9,4 +10,12 @@ import { IAnimals } from 'src/models/animals';
 export class AnimalCardComponent {
   @Input() animals: IAnimals[] = [];
   @Output() clickButton: EventEmitter<MouseEvent> = new EventEmitter();
+  animalImages = animalImages;
+
+  displayImage(animalInfo: IAnimals, animalsImage: IImages[]) {
+    const matchImage = animalsImage.find(
+      (image) => image.species === animalInfo.species
+    )
+    return matchImage?.img;
+  }
 }

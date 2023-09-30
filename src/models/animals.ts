@@ -1,19 +1,29 @@
+export type Species =
+  | 'Cachorro'
+  | 'Gato'
+  | 'Coelho'
+  | 'Cobra'
+  | 'Ave'
+  | 'Primata'
+  | 'Roedor';
+
+export type Gender = 'Feminino' | 'Masculino';
+
+export type Size = 'Pequeno' | 'Médio' | 'Grande';
+
 export interface IAnimals {
   name: string;
   description: string;
-  species: string;
-  gender: string;
+  species: Species;
+  gender: Gender;
   age: number;
-  size: string;
+  size: Size;
   local: string;
   vaccines: string;
   castration: boolean;
 }
 
-export const species: string[] = ['Cachorro', 'Gato', 'Coelho', 'Ave'];
-
-export const gender: string[] = ['Feminino', 'Masculino'];
-
-export const sizes: string[] = ['Pequeno', 'Médio', 'Grande'];
-
-export const castration: string[] = ['Sim', 'Não'];
+export interface IImages {
+  species: Species;
+  img: string;
+}

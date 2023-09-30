@@ -1,6 +1,11 @@
+<p class="container-title">Pets disponíveis para adoção</p>
 <div class="container-cards">
-  <p class="container-title">Pets disponíveis para adoção</p>
   <div class="animal-info" *ngFor="let animal of animals">
-    <span class="animal-name">{{ animal.name }}</span>
+    <img [src]="displayImage(animal, animalImages)" class="animal-img">
+    <div class="animal-features">
+      <p class="animal-name">{{ animal.name }}</p>
+      <p class="animal-size">{{ animal.size }}</p>
+      <p class="animal-local">{{ animal.local | uppercase }}</p>
+    </div>
   </div>
 </div>
