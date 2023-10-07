@@ -16,8 +16,8 @@
 }
 
 .container {
-  cursor: pointer;
   &-btn {
+    cursor: pointer;
     color: $grey;
     border: none;
     font-family: Roboto;

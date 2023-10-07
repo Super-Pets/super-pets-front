@@ -12,6 +12,7 @@ export type Gender = 'Feminino' | 'Masculino';
 export type Size = 'Pequeno' | 'Médio' | 'Grande';
 
 export interface IAnimals {
+  id: number,
   name: string;
   description: string;
   species: Species;

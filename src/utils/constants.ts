@@ -1,4 +1,3 @@
-import '../models/animals';
 import { IImages, Species, Gender, Size } from '../models/animals';
 
 export const species: Species[] = [
@@ -24,7 +23,7 @@ export const animalImages: IImages[] = [
   },
   {
     species: 'Gato',
-    img: '../assets/cat.jpeg',
+    img: '../assets/cat.webp',
   },
   {
     species: 'Coelho',
@@ -32,15 +31,15 @@ export const animalImages: IImages[] = [
   },
   {
     species: 'Cobra',
-    img: '../assets/snake.jpeg',
+    img: '../assets/snake.webp',
   },
   {
     species: 'Ave',
-    img: '../assets/bird.jpeg',
+    img: '../assets/bird.webp',
   },
   {
     species: 'Primata',
-    img: '../assets/monkey.jpeg',
+    img: '../assets/monkey.webp',
   },
   {
     species: 'Roedor',

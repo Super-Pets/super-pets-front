@@ -8,10 +8,10 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  subscriptions: Subscription[] = [];
+  subscription: Subscription = new Subscription();
   animals: IAnimals[] = [];
 
   constructor(
@@ -29,25 +29,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getAnimals(): void {
-    this.subscriptions.push(
-      this.animalsService.getAnimals().subscribe({
-        next: result => this.animals = result,
-        error: () => this.toastr.error('Erro ao carregar informações dos pets. Por favor, tente novamente.', 'Erro')
-      })
-    )
-  }
-
-  getAnimalById(): void {
-    this.subscriptions.push(
-      this.animalsService.getAnimalById('1').subscribe({
-        next: result => console.log(result),
-        error: () => this.toastr.error('Erro ao carregar informações do pet. Por favor, tente novamente.', 'Erro')
-      })
-    )
+    this.subscription = this.animalsService.getAnimals().subscribe({
+      next: (result) => (this.animals = result),
+      error: () =>
+        this.toastr.error(
+          'Erro ao carregar informações dos pets. Por favor, tente novamente.',
+          'Erro'
+        ),
+    });
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    this.subscription.unsubscribe();
   }
-
 }

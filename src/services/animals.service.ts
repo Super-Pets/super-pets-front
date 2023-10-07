@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AnimalsService {
-  url: string = 'http://localhost:8081/animals';
+  url: string = 'http://localhost:5097/animals';
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +19,7 @@ export class AnimalsService {
     return this.http.get(this.url);
   }
 
-  getAnimalById(id: string): Observable<any> {
+  getAnimalById(id: number): Observable<any> {
     return this.http.get(`${this.url}/${id}`);
   }
 }

@@ -6,7 +6,7 @@
   <div *ngIf="hash; else elseButton">
     <a [href]="hash">{{ label }}</a>
   </div>
-  <ng-template #elseButton>
+  <ng-template class="pointer" #elseButton>
     {{ label }}
   </ng-template>
 </button>

@@ -60,13 +60,17 @@
 
   &-img {
     width: 100%;
-    height: auto;
+    height: 150px;
     border-radius: 10px;
   }
 
   @media only screen and (min-width: $medium) {
     &-info {
       width: 220px;
+    }
+
+    &-img {
+      height: 270px;
     }
   }
 }

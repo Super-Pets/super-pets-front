@@ -1,6 +1,6 @@
 <p class="container-title">Pets disponíveis para adoção</p>
 <div class="container-cards">
-  <div class="animal-info" *ngFor="let animal of animals">
+  <div class="animal-info" *ngFor="let animal of animals" (click)="getAnimalInfo(animal.id)">
     <img [src]="displayImage(animal, animalImages)" class="animal-img">
     <div class="animal-features">
       <p class="animal-name">{{ animal.name }}</p>
