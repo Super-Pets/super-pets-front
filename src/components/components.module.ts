@@ -12,6 +12,7 @@ import { RegisterComponent } from 'src/components/register/register.component';
 import { HomeComponent } from 'src/components/home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AnimalCardComponent } from 'src/components/animal-card/animal-card.component';
+import { AnimalInfoComponent } from './animal-info/animal-info.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AnimalCardComponent } from 'src/components/animal-card/animal-card.comp
     RegisterComponent,
     HomeComponent,
     AnimalCardComponent,
+    AnimalInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { AnimalCardComponent } from 'src/components/animal-card/animal-card.comp
     CommonModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  exports: [AnimalInfoComponent],
   bootstrap: [AppComponent],
 })
 export class ComponentsModule {}

@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnDestroy } from '@angular/core';
 import { IAnimals, IImages } from 'src/models/animals';
 import { animalImages } from 'src/utils/constants';
-import { Router } from '@angular/router';
 import { AnimalsService } from 'src/services/animals.service';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-animal-card',
@@ -13,33 +13,49 @@ import { ToastrService } from 'ngx-toastr';
 export class AnimalCardComponent {
   @Input() animals: IAnimals[] = [];
   @Output() clickButton: EventEmitter<any> = new EventEmitter<any>();
+  subscription: Subscription = new Subscription();
   animalImages = animalImages;
+  isModalVisible: boolean = false;
+  selectedAnimal: IAnimals = {
+    id: 0,
+    name: '',
+    description: '',
+    species: 'Cachorro',
+    gender: 'Feminino',
+    age: 0,
+    size: 'Pequeno',
+    local: '',
+    vaccines: '',
+    castration: false,
+  };
 
   constructor(
-    private router: Router,
     private animalsService: AnimalsService,
     private toastr: ToastrService
   ) {}
 
   displayImage(animalInfo: IAnimals, animalsImage: IImages[]) {
     const matchImage = animalsImage.find(
-      (image) => image.species === animalInfo.species
+      image => image.species === animalInfo.species
     );
     return matchImage?.img;
   }
 
   getAnimalInfo(id: number) {
-    this.getAnimalById(id);
-  }
-
-  getAnimalById(id: number): void {
-    this.animalsService.getAnimalById(id).subscribe({
-      next: (result) => console.log(result),
+    this.subscription = this.animalsService.getAnimalById(id).subscribe({
+      next: (data) => {
+        this.isModalVisible = true;
+        this.selectedAnimal = data;
+      },
       error: () =>
         this.toastr.error(
           'Erro ao carregar informações do pet. Por favor, tente novamente.',
           'Erro'
         ),
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

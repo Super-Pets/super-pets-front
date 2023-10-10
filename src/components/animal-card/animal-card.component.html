@@ -9,3 +9,7 @@
     </div>
   </div>
 </div>
+
+<div *ngIf="isModalVisible">
+  <app-animal-info [selectedAnimal]="selectedAnimal" [animalImages]="animalImages"></app-animal-info>
+</div>

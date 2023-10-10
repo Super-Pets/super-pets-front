@@ -1,0 +1,15 @@
+<div class="animal-info-modal" *ngIf="selectedAnimal">
+  <div class="animal-info-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <img
+      [src]="displayImage(selectedAnimal, animalImages)"
+      class="animal-img"
+    />
+    <div class="animal-details">
+      <p class="animal-name">{{ selectedAnimal.name }}</p>
+      <p class="animal-size">{{ selectedAnimal.size }}</p>
+      <p class="animal-local">De {{ selectedAnimal.local | uppercase }}</p>
+      <p class="animal-features">Características: {{ selectedAnimal.description }}</p>
+    </div>
+  </div>
+</div>
