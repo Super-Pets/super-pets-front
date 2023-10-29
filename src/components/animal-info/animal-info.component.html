@@ -11,5 +11,10 @@
       <p class="animal-local">De {{ selectedAnimal.local | uppercase }}</p>
       <p class="animal-features">Características: {{ selectedAnimal.description }}</p>
     </div>
+    <app-button
+      label="Deletar animal"
+      bgColor="dark-pink"
+      (onClick)="deleteAnimal(selectedAnimal.id)"
+    ></app-button>
   </div>
 </div>
