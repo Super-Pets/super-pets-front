@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './animal-card.component.html',
   styleUrls: ['./animal-card.component.scss'],
 })
-export class AnimalCardComponent {
+export class AnimalCardComponent implements OnDestroy {
   @Input() animals: IAnimals[] = [];
   @Output() clickButton: EventEmitter<any> = new EventEmitter<any>();
   subscription: Subscription = new Subscription();

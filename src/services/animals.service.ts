@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AnimalsService {
-  url: string = 'http://localhost:5097/animals';
+  url: string = 'http://localhost:8081/animals';
 
   constructor(private http: HttpClient) {}
 
@@ -22,4 +22,9 @@ export class AnimalsService {
   getAnimalById(id: number): Observable<any> {
     return this.http.get(`${this.url}/${id}`);
   }
+
+  deleteAnimal(id: number): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
 }

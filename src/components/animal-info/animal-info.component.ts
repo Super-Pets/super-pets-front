@@ -1,16 +1,18 @@
-import { Component, Input } from '@angular/core';
-import { IAnimals } from 'src/models/animals';
+import { Component, Input, OnDestroy } from '@angular/core';
+import { IAnimals, IImages } from 'src/models/animals';
 import { AnimalsService } from 'src/services/animals.service';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-animal-info',
   templateUrl: './animal-info.component.html',
   styleUrls: ['./animal-info.component.scss'],
 })
-export class AnimalInfoComponent {
+export class AnimalInfoComponent implements OnDestroy {
+  subscription: Subscription = new Subscription();
   @Input() selectedAnimal: IAnimals | null = null;
-  @Input() animalImages: any;
+  @Input() animalImages: IImages[] = [];
 
   constructor(
     private animalsService: AnimalsService,
@@ -21,20 +23,21 @@ export class AnimalInfoComponent {
     this.selectedAnimal = null;
   }
 
-  displayImage(animal: IAnimals | null, images: any) {
+  displayImage(animal: IAnimals | null, images: IImages[]) {
     if (animal && animal.species) {
       const matchImage = images.find(
-        (image: any) => image.species === animal.species
+        (image: IImages) => image.species === animal.species
       );
       return matchImage?.img;
     }
+    return;
   }
 
   deleteAnimal(id: number) {
-    this.animalsService.deleteAnimal(id).subscribe({
+    this.subscription = this.animalsService.deleteAnimal(id).subscribe({
       next: () => {
-        this.selectedAnimal = null;
-        location.reload();
+        !this.selectedAnimal;
+        window.location.reload();
       },
       error: () =>
         this.toastr.error(
@@ -42,5 +45,9 @@ export class AnimalInfoComponent {
           'Erro'
         ),
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
