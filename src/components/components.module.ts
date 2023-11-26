@@ -13,6 +13,7 @@ import { HomeComponent } from 'src/components/home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AnimalCardComponent } from 'src/components/animal-card/animal-card.component';
 import { AnimalInfoComponent } from './animal-info/animal-info.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AnimalInfoComponent } from './animal-info/animal-info.component';
     HomeComponent,
     AnimalCardComponent,
     AnimalInfoComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

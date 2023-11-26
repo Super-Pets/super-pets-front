@@ -74,6 +74,11 @@
   margin-top: 10px; 
 }
 
+.display-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media only screen and (min-width: $medium) {
   .animal-info-content {
     width: 420px;

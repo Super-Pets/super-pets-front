@@ -19,8 +19,12 @@ export class AnimalsService {
     return this.http.get(this.url);
   }
 
-  getAnimalById(id: number): Observable<any> {
+  getAnimalById(id: any): Observable<any> {
     return this.http.get(`${this.url}/${id}`);
+  }
+
+  editAnimal(id: number, body: IAnimals): Observable<any> {
+    return this.http.put(`${this.url}/${id}`, body);
   }
 
   deleteAnimal(id: number): Observable<any> {

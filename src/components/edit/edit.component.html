@@ -1,0 +1,106 @@
+<div>
+  <app-header></app-header>
+  <form class="register-container" #form="ngForm">
+    <p class="subtitle">Edite seu pet ❤</p>
+    <div class="input-container">
+      <input
+        placeholder="Nome do animal"
+        type="text"
+        name="name"
+        [(ngModel)]="animalInfo.name"
+        required
+        autocomplete="off"
+      />
+    </div>
+    <div class="input-container">
+      <select name="species" ngModel required>
+        <option value="" selected disabled>Selecione a espécie</option>
+        <option *ngFor="let item of animalsType.species" [ngValue]="animalInfo.species">
+          {{ item }}
+        </option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <input
+        placeholder="Características"
+        type="text"
+        name="description"
+        [(ngModel)]="animalInfo.description"
+        required
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="input-container">
+      <select name="gender" ngModel required>
+        <option value="" selected disabled>Selecione o gênero</option>
+        <option *ngFor="let item of animalsType.gender" [ngValue]="animalInfo.gender">
+          {{ item }}
+        </option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <input
+        placeholder="Idade"
+        type="number"
+        min="0"
+        max="100"
+        name="age"
+        [(ngModel)]="animalInfo.age"
+        required
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="input-container">
+      <select name="size" ngModel required>
+        <option value="" selected disabled>Selecione o porte</option>
+        <option *ngFor="let size of animalsType.sizes" [ngValue]="animalInfo.size">
+          {{ size }}
+        </option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <input
+        placeholder="Estado"
+        type="text"
+        name="local"
+        [(ngModel)]="animalInfo.local"
+        required
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="input-container">
+      <input
+        placeholder="Vacinas"
+        type="text"
+        name="vaccines"
+        [(ngModel)]="animalInfo.vaccines"
+        required
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="input-container">
+      <select name="castration" ngModel required>
+        <option value="" disabled>Castrado(a)?</option>
+        <option
+          *ngFor="let item of animalsType.castration"
+          [ngValue]="item === 'Sim' ? true : false"
+        >
+          {{ item }}
+        </option>
+      </select>
+    </div>
+
+    <app-button
+      label="Editar"
+      bgColor="dark-pink"
+      (onClick)="submitEdit(animalInfo.id, form.value)"
+    ></app-button>
+  </form>
+</div>

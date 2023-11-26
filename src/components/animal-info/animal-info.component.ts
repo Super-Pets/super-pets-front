@@ -3,6 +3,7 @@ import { IAnimals, IImages } from 'src/models/animals';
 import { AnimalsService } from 'src/services/animals.service';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-animal-info',
@@ -16,6 +17,7 @@ export class AnimalInfoComponent implements OnDestroy {
 
   constructor(
     private animalsService: AnimalsService,
+    private router: Router,
     private toastr: ToastrService
   ) {}
 
@@ -45,6 +47,10 @@ export class AnimalInfoComponent implements OnDestroy {
           'Erro'
         ),
     });
+  }
+
+  goToEditAnimal(id: number) {
+    this.router.navigate(['/editar', id]);
   }
 
   ngOnDestroy(): void {

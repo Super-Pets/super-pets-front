@@ -1,0 +1,155 @@
+@import "../../global.scss";
+
+.register-container {
+  background-color: $white;
+  height: 80vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: $dark-pink;
+  font-family: Roboto;
+  font-weight: 500;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@mixin subtitle($font-size, $margin-bottom) {
+  .subtitle {
+    font-size: $font-size;
+    margin-bottom: $margin-bottom;
+  }
+}
+
+@mixin register-container {
+  .register-container {
+    @content;
+  }
+}
+
+@mixin input-container {
+  .input-container {
+    @content;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: $extra-small) {
+  @include subtitle(12px, 20px);
+  @include register-container {
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    select {
+      padding: 8px 3px;
+      width: 80vw;
+      border: 1px solid $dark-pink;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      color: grey;
+    }
+  }
+  @include input-container {
+    width: 90%;
+    input {
+      width: 80vw;
+      padding: 8px;
+      border: 1px solid $dark-pink;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: $small) {
+  @include subtitle(16px, 20px);
+  @include register-container {
+    margin: 50px auto;
+
+    select {
+      width: 70vw;
+    }
+  }
+  @include input-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    input {
+      width: 70vw;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: $medium) {
+  @include subtitle(24px, 10px);
+  @include register-container {
+    width: 70%;
+
+    select {
+      padding: 8px 3px;
+      width: 50vw;
+    }
+  }
+  @include input-container {
+    width: 100%;
+    input {
+      width: 50vw;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: $large) {
+  @include register-container {
+    select {
+      width: 45vw;
+    }
+  }
+  @include input-container {
+    width: 100%;
+    input {
+      width: 45vw;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: $extra-large) {
+  @include subtitle(28px, 10px);
+  @include register-container {
+    width: 50%;
+    margin: 30px auto;
+
+    select {
+      padding: 8px 3px;
+      width: 35vw;
+    }
+  }
+  @include input-container {
+    width: 100%;
+    input {
+      width: 35vw;
+      padding: 8px;
+      border-radius: 8px;
+    }
+  }
+}
